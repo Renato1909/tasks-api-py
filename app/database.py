@@ -1,8 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
 
-from app import models  # noqa: F401
-
 DATABASE_URL = "sqlite+aiosqlite:///./data/tasks.db"
 
 engine = create_async_engine(DATABASE_URL, echo=False, future=True)

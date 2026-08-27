@@ -4,14 +4,17 @@ from typing import Optional
 
 from jose import jwt, JWTError
 from passlib.context import CryptContext
+from fastapi.security import OAuth2PasswordBearer
 
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-change-in-production")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7
 
-from fastapi.security import OAuth2PasswordBearer
-
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+pwd_context = CryptContext(
+    schemes=["pbkdf2_sha256"],
+    deprecated="auto",
+    pbkdf2_sha256__rounds=29000,
+)
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/login")
 
