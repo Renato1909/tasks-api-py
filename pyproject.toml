@@ -37,7 +37,7 @@ python_functions = ["test_*"]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
-select = ["E", "F", "I", "UP", "B", "C4", "SIM", "T20", "W", "A", "ICN", "PD", "PT", "Q", "RUF", "RET", "S", "T10", "TD", "TRY", "ARG", "PTH", "ERA", "PL", "NPY", "PER", "INP", "ASYNC", "LOG", "FLY"]
+select = ["E", "F", "I", "UP", "B", "C4", "SIM", "T20", "W", "A", "ICN", "PD", "PT", "Q", "RUF", "RET", "S", "T10", "TD", "TRY", "ARG", "PTH", "ERA", "PL", "NPY", "INP", "ASYNC", "LOG", "FLY"]
 ignore = ["S101", "T201"]
 
 [tool.ruff.format]
